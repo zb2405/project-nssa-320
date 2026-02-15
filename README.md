@@ -22,15 +22,28 @@ updates.
 
 ## Project Structure
 
-project-nssa-320-master/ 
-├── main.yml 
-  └── roles/ 
-    ├── apache/ 
-    ├── haproxy/ 
-    ├── firewall_exceptions/ 
-    ├── selinux/ 
-    └── dnf_automatic/
-
+project-nssa-320-master/
+├── main.yml
+└── roles/
+├── apache/
+│ ├── tasks/
+│ └── files/
+│
+├── haproxy/
+│ ├── tasks/
+│ └── files/
+│
+├── firewall_exceptions/
+│ ├── tasks/
+│ └── handlers/
+│
+├── selinux/
+│ └── tasks/
+│
+└── dnf_automatic/
+├── defaults/
+├── tasks/
+└── templates/
 ------------------------------------------------------------------------
 
 ## Usage
