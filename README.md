@@ -22,6 +22,7 @@ updates.
 
 ## Project Structure
 
+```
 project-nssa-320-master/
 ├── main.yml
 └── roles/
@@ -44,6 +45,7 @@ project-nssa-320-master/
 ├── defaults/
 ├── tasks/
 └── templates/
+```
 ------------------------------------------------------------------------
 
 ## Usage
