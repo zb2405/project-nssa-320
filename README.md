@@ -1,68 +1,93 @@
-# NSSA-320 Ansible Automation Project
+# NSSA-320 Ansible & AWX Infrastructure Automation
 
-## Overview
+## Project Overview
 
-This project demonstrates an infrastructure automation solution built
-using **Ansible roles**. It provisions and configures a web application
-environment including Apache web servers, HAProxy load balancing,
-firewall configuration, SELinux management, and automated package
-updates.
+This project demonstrates an **Infrastructure as Code (IaC)** automation
+solution built using **Ansible roles** and executed through **Ansible
+AWX**. The automation provisions and configures a load‑balanced web
+application environment while showcasing centralized job execution,
+inventory management, and GUI‑based orchestration.
+
+The goal of the project was to reduce manual system configuration,
+improve repeatability, and demonstrate enterprise‑style automation
+workflows using open‑source tools.
 
 ------------------------------------------------------------------------
 
 ## Architecture
 
--   Apache Web Server
+The automated environment includes:
+
+-   Apache Web Servers
 -   HAProxy Load Balancer
 -   Firewall Exception Management
 -   SELinux Configuration
--   Automatic System Updates using dnf-automatic
+-   Automatic Updates using `dnf-automatic`
+-   Ansible AWX for centralized orchestration
+
+------------------------------------------------------------------------
+
+## Key Features
+
+-   Role‑based Ansible architecture
+-   GUI automation using AWX
+-   Inventory and credential management
+-   Idempotent configuration management
+-   Automated patching and firewall configuration
+-   Load‑balanced web deployment
 
 ------------------------------------------------------------------------
 
 ## Project Structure
-
 ```
-project-nssa-320-master/
-├── main.yml
-└── roles/
-├── apache/
-│ ├── tasks/
-│ └── files/
-│
-├── haproxy/
-│ ├── tasks/
-│ └── files/
-│
-├── firewall_exceptions/
-│ ├── tasks/
-│ └── handlers/
-│
-├── selinux/
-│ └── tasks/
-│
-└── dnf_automatic/
-├── defaults/
-├── tasks/
-└── templates/
+    project-nssa-320-master/
+    ├── main.yml
+    └── roles/
+        ├── apache/
+        │   ├── tasks/
+        │   └── files/
+        │
+        ├── haproxy/
+        │   ├── tasks/
+        │   └── files/
+        │
+        ├── firewall_exceptions/
+        │   ├── tasks/
+        │   └── handlers/
+        │
+        ├── selinux/
+        │   └── tasks/
+        │
+        └── dnf_automatic/
+            ├── defaults/
+            ├── tasks/
+            └── templates/
 ```
 ------------------------------------------------------------------------
 
 ## Usage
 
+Run playbook manually:
+
+``` bash
 ansible-playbook -i inventory main.yml
+```
+
+Or execute through AWX by creating a job template and launching the
+automation workflow.
 
 ------------------------------------------------------------------------
 
-## Features
+## Results
 
--   Role-based Ansible structure
--   Idempotent infrastructure deployment
--   Automated firewall and SELinux configuration
--   Load-balanced web deployment
+The automation successfully deployed the web application across all web
+servers and enabled access through the load balancer. AWX provided
+centralized logging, execution visibility, and simplified infrastructure
+management.
 
 ------------------------------------------------------------------------
 
 ## Author
 
-NSSA Automation Project
+Zaki Bawade\
+RIT NSSA Infrastructure Automation Project
